@@ -967,7 +967,6 @@ const converterNumberFormatter = new Intl.NumberFormat("zh-TW", {
 const itineraryList = document.querySelector("#itineraryList");
 const mobileDayLinks = document.querySelector("#mobileDayLinks");
 const toggleAllDays = document.querySelector("#toggleAllDays");
-const openCurrentDay = document.querySelector("#openCurrentDay");
 const checklist = document.querySelector("#checklist");
 const checklistProgress = document.querySelector("#checklistProgress");
 const checklistProgressBar = document.querySelector("#checklistProgressBar");
@@ -1168,19 +1167,16 @@ function updateTripStatus() {
     statusText.textContent =
       daysLeft === 0 ? "今天出發，準備前往機場！" : `距離出發還有 ${daysLeft} 天`;
     statusDate.textContent = "AUG 07";
-    openCurrentDay.textContent = "開啟第一天";
     currentDayIndex = 0;
   } else if (now < tripEnd) {
     const safeIndex = Math.max(0, currentDayIndex);
     statusText.textContent = `旅行第 ${safeIndex + 1} 天 · ${tripData[safeIndex].title}`;
     statusDate.textContent = tripData[safeIndex].dateLabel.replace(".", " / ");
-    openCurrentDay.textContent = "查看今天行程";
     percentage = ((now - tripStart) / (tripEnd - tripStart)) * 100;
     openDay(safeIndex, false);
   } else {
     statusText.textContent = "旅程完成 · 青春不散場";
     statusDate.textContent = "MEMORIES";
-    openCurrentDay.textContent = "重看最後一天";
     currentDayIndex = tripData.length - 1;
     percentage = 100;
   }
@@ -1744,8 +1740,6 @@ toggleAllDays.addEventListener("click", () => {
   });
   updateToggleAllButton();
 });
-
-openCurrentDay.addEventListener("click", () => openDay(currentDayIndex));
 
 resetChecklist.addEventListener("click", () => {
   checklist.querySelectorAll("input").forEach((input) => {

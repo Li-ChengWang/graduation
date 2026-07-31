@@ -1,5 +1,12 @@
 "use strict";
 
+const osakaHomeLinks = [
+  {
+    label: "開啟地圖",
+    url: "https://maps.app.goo.gl/rQyWe7sqBMXwYjb2A",
+  },
+];
+
 const tripData = [
   {
     date: "2026-08-07",
@@ -37,13 +44,14 @@ const tripData = [
       {
         time: "22:30–23:30",
         title: "機場接送",
-        description: "搭車前往大阪住宿。",
+        description: "搭車前往大阪・柏凱的家。",
       },
       {
         time: "23:30–",
         title: "抵達住宿",
-        place: "大阪住宿",
+        place: "大阪・柏凱的家",
         description: "放行李、去便利商店買宵夜。",
+        links: osakaHomeLinks,
       },
       {
         time: "24:00–",
@@ -62,8 +70,9 @@ const tripData = [
       {
         time: "09:30–11:00",
         title: "早安",
-        place: "大阪住宿",
+        place: "大阪・柏凱的家",
         description: "起床、準備出門。",
+        links: osakaHomeLinks,
       },
       {
         time: "11:00–12:30",
@@ -157,8 +166,9 @@ const tripData = [
       {
         time: "09:00–10:00",
         title: "早安",
-        place: "大阪住宿",
+        place: "大阪・柏凱的家",
         description: "起床、帶上三天兩夜的行李。",
+        links: osakaHomeLinks,
       },
       {
         time: "10:00–12:00",
@@ -503,7 +513,9 @@ const tripData = [
       {
         time: "隨興回",
         title: "返回大阪住宿",
+        place: "大阪・柏凱的家",
         note: "自己注意末班車",
+        links: osakaHomeLinks,
       },
       {
         time: "24:00–",
@@ -522,8 +534,9 @@ const tripData = [
       {
         time: "06:30–07:30",
         title: "早安",
-        place: "大阪住宿",
+        place: "大阪・柏凱的家",
         description: "起床、準備出發。",
+        links: osakaHomeLinks,
       },
       {
         time: "07:30–08:30",
@@ -576,6 +589,8 @@ const tripData = [
       {
         time: "22:30–",
         title: "返回大阪住宿",
+        place: "大阪・柏凱的家",
+        links: osakaHomeLinks,
       },
       {
         time: "24:00–",
@@ -594,8 +609,9 @@ const tripData = [
       {
         time: "08:30–09:00",
         title: "早安",
-        place: "大阪住宿",
+        place: "大阪・柏凱的家",
         description: "起床、準備出門。",
+        links: osakaHomeLinks,
       },
       {
         time: "09:30–11:00",
@@ -697,6 +713,8 @@ const tripData = [
       {
         time: "22:30–",
         title: "返回大阪住宿",
+        place: "大阪・柏凱的家",
+        links: osakaHomeLinks,
       },
       {
         time: "24:00–",
@@ -824,8 +842,9 @@ const tripData = [
       {
         time: "07:30–08:00",
         title: "早安",
-        place: "大阪住宿",
+        place: "大阪・柏凱的家",
         description: "起床、準備出門。",
+        links: osakaHomeLinks,
       },
       {
         time: "08:30–10:00",
@@ -882,6 +901,8 @@ const tripData = [
       {
         time: "21:30–22:30",
         title: "返回大阪住宿",
+        place: "大阪・柏凱的家",
+        links: osakaHomeLinks,
       },
       {
         time: "22:30–",
@@ -912,9 +933,10 @@ const tripData = [
       {
         time: "03:30–04:30",
         title: "早起回家",
-        place: "大阪住宿",
+        place: "大阪・柏凱的家",
         description: "起床、最後整理。",
         note: "離開前把住宿整理乾淨",
+        links: osakaHomeLinks,
       },
       {
         time: "04:30–05:30",

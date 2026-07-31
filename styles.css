@@ -729,7 +729,7 @@ a {
 .timeline-time {
   padding-top: 1px;
   color: var(--muted);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   font-variant-numeric: tabular-nums;
   text-align: right;
@@ -2058,7 +2058,7 @@ a {
   }
 
   .timeline-time {
-    font-size: 9px;
+    font-size: 10px;
   }
 
   .timeline-body {

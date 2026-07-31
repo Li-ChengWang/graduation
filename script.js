@@ -488,7 +488,17 @@ const tripData = [
         time: "時間彈性",
         title: "晚餐",
         place: "心齋橋 / 道頓堀附近",
-        description: "隨興吃。",
+        description: "從 Tabelog 候選中挑一間。",
+        links: [
+          {
+            label: "心齋橋一帶餐廳",
+            url: "https://tabelog.com/tw/rstLst/?PG=1&from_search=&voluntary_search=1&from_search_form=1&lid=&SrtT=rt&pcd=27&LstPrf=A2701&LstAre=A270201&station_id=&Cat=&RdoCosTp=2&LstCos=0&LstCosT=5&vac_net=0&search_date=2026-7-31+%28%E6%98%9F%E6%9C%9F%E4%BA%94%29+&svd=20260731&svt=1900&svps=2&LstRev=0&LstSitu=0&LstSmoking=0",
+          },
+          {
+            label: "難波・道頓堀餐廳",
+            url: "https://tabelog.com/tw/rstLst/?PG=1&from_search=&voluntary_search=1&from_search_form=1&lid=&SrtT=rt&pcd=27&LstPrf=A2701&LstAre=A270202&station_id=0&Cat=&RdoCosTp=2&LstCos=0&LstCosT=5&vac_net=0&search_date=2026-7-31+%28%E6%98%9F%E6%9C%9F%E4%BA%94%29+&svd=20260731&svt=1900&svps=2&LstRev=0&LstSitu=0&LstSmoking=0",
+          },
+        ],
       },
       {
         time: "隨興回",
@@ -943,6 +953,7 @@ const checklistItems = [
   "小電風扇或扇子",
   "雨傘、陽傘",
   "領巾",
+  "延長線",
 ];
 
 const fixedExpenseItems = [

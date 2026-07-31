@@ -1,0 +1,594 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="2026 大阪、神戶、和歌山、奈良與京都畢業旅行行程表。"
+    />
+    <meta name="theme-color" content="#f4efe4" />
+    <meta property="og:title" content="日本畢業旅行" />
+    <meta
+      property="og:description"
+      content="2026.08.07 — 08.18｜關西 12 天畢業旅行"
+    />
+    <meta property="og:type" content="website" />
+    <title>日本畢業旅行｜2026 關西</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main-content">跳到主要內容</a>
+
+    <header class="site-header" id="siteHeader">
+      <div class="header-inner">
+        <a class="site-title" href="#top" aria-label="回到頁面頂端">
+          <strong>日本畢業旅行</strong>
+          <span>2026.08.07 — 08.18</span>
+        </a>
+
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="mobileMenu"
+          aria-label="打開導覽選單"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <button
+      class="menu-backdrop"
+      id="menuBackdrop"
+      type="button"
+      aria-label="關閉導覽選單"
+      hidden
+    ></button>
+
+    <aside
+      class="mobile-menu"
+      id="mobileMenu"
+      aria-label="行動版導覽"
+      aria-hidden="true"
+      tabindex="-1"
+      hidden
+    >
+      <div class="mobile-menu-head">
+        <div>
+          <strong>快速選單</strong>
+          <span>選擇你要查看的內容</span>
+        </div>
+        <button id="menuClose" type="button" aria-label="關閉導覽選單">×</button>
+      </div>
+      <nav>
+        <a href="#itinerary">
+          <span>行程</span>
+          <strong>每日行程</strong>
+        </a>
+        <a href="#essentials">
+          <span>準備</span>
+          <strong>行前確認</strong>
+        </a>
+        <a href="#budget">
+          <span>費用</span>
+          <strong>費用與記帳</strong>
+        </a>
+      </nav>
+      <div class="mobile-menu-days">
+        <p>直接跳到某一天</p>
+        <div id="mobileDayLinks"></div>
+      </div>
+    </aside>
+
+    <main id="main-content">
+      <section class="hero" id="top">
+        <div class="hero-inner">
+          <p class="eyebrow">2026 GRADUATION TRIP</p>
+          <h1>日本畢業旅行</h1>
+          <p class="hero-lead">大阪・神戶・和歌山・奈良・京都</p>
+
+          <div class="trip-overview" aria-label="旅程摘要">
+            <div>
+              <span>日期</span>
+              <strong>08.07 — 08.18</strong>
+            </div>
+            <div>
+              <span>天數</span>
+              <strong>12 天 11 夜</strong>
+            </div>
+            <div>
+              <span>人數</span>
+              <strong>10 人</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="trip-status-wrap">
+          <div class="trip-status">
+            <div>
+              <span class="status-dot" aria-hidden="true"></span>
+              <p id="tripStatus" aria-live="polite">正在計算旅程倒數…</p>
+            </div>
+            <span id="tripStatusDate">AUG 07</span>
+          </div>
+          <div
+            class="status-track visually-hidden"
+            role="progressbar"
+            aria-label="旅程進度"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            aria-valuenow="0"
+            id="tripProgress"
+          >
+            <span></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section itinerary-section" id="itinerary">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">THE ITINERARY</p>
+            <h2>每日行程</h2>
+          </div>
+          <p>
+            點開每天的卡片查看時間、地點與備註。地點按鈕會直接開啟地圖。
+          </p>
+        </div>
+
+        <div class="itinerary-toolbar">
+          <p class="toolbar-hint">右上角選單可快速跳到指定日期</p>
+          <button class="text-button" id="toggleAllDays" type="button">
+            全部展開
+            <span aria-hidden="true">＋</span>
+          </button>
+        </div>
+
+        <div class="itinerary-list" id="itineraryList"></div>
+
+        <noscript>
+          <p class="noscript-note">
+            這份行程需要啟用 JavaScript 才能展開；請開啟 JavaScript 後重新整理。
+          </p>
+        </noscript>
+      </section>
+
+      <section class="section essentials-section" id="essentials">
+        <div class="section-heading light-heading">
+          <div>
+            <p class="section-kicker">BEFORE WE GO</p>
+            <h2>出發前確認</h2>
+          </div>
+          <p>勾選結果只會存在自己的瀏覽器，不會傳送或公開。</p>
+        </div>
+
+        <div class="essentials-grid">
+          <article class="checklist-card">
+            <div class="card-heading">
+              <div>
+                <span class="card-number">01</span>
+                <h3>行李與手續</h3>
+              </div>
+              <p id="checklistProgress" aria-live="polite">0 / 0 完成</p>
+            </div>
+            <div class="checklist-progress" aria-hidden="true">
+              <span id="checklistProgressBar"></span>
+            </div>
+            <div class="checklist" id="checklist"></div>
+            <button class="reset-checklist" id="resetChecklist" type="button">
+              清除勾選紀錄
+            </button>
+          </article>
+
+          <div class="essential-side">
+            <article class="deadline-card">
+              <div class="card-heading">
+                <div>
+                  <span class="card-number">02</span>
+                  <h3>不能錯過的時間</h3>
+                </div>
+              </div>
+              <ol class="deadline-list">
+                <li>
+                  <time datetime="2026-08-08T17:30">08.08 · 17:30</time>
+                  <div>
+                    <strong>神戶牛燒肉</strong>
+                    <span>已訂位</span>
+                  </div>
+                </li>
+                <li>
+                  <time datetime="2026-08-10T20:10">08.10 · 20:10</time>
+                  <div>
+                    <strong>白良濱煙火大會</strong>
+                    <span>20:40 結束</span>
+                  </div>
+                </li>
+                <li>
+                  <time datetime="2026-08-11T17:30">08.11 · 17:30</time>
+                  <div>
+                    <strong>大阪街頭卡丁車</strong>
+                    <span>開放報到</span>
+                  </div>
+                </li>
+                <li>
+                  <time datetime="2026-08-13T20:10">08.13 · 20:10</time>
+                  <div>
+                    <strong>大阪表演</strong>
+                    <span>已訂位</span>
+                  </div>
+                </li>
+                <li>
+                  <time datetime="2026-08-17T20:00">08.17 · 20:00</time>
+                  <div>
+                    <strong>壽司吃到飽</strong>
+                    <span>已訂位</span>
+                  </div>
+                </li>
+              </ol>
+            </article>
+
+            <article class="stay-card">
+              <div class="stay-card-title">
+                <span>STAY</span>
+                <h3>住宿節點</h3>
+              </div>
+              <dl>
+                <div>
+                  <dt>08.07 — 08.08</dt>
+                  <dd>大阪住宿</dd>
+                </div>
+                <div>
+                  <dt>08.09</dt>
+                  <dd>Suzukaze · 白濱</dd>
+                </div>
+                <div>
+                  <dt>08.10</dt>
+                  <dd>Hotel Kii Tanabe</dd>
+                </div>
+                <div>
+                  <dt>08.11 — 08.17</dt>
+                  <dd>大阪住宿</dd>
+                </div>
+              </dl>
+              <p>公開版不顯示私人住宿地址。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section budget-section" id="budget">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">TRIP BUDGET</p>
+            <h2>費用與個人記帳</h2>
+          </div>
+          <p>先帶入 Excel 已有費用，再記下旅途中自己的餐食、交通與購物。</p>
+        </div>
+
+        <div class="budget-layout">
+          <div class="budget-total">
+            <p>目前每人</p>
+            <strong><span>NT$</span> 16,885</strong>
+            <small>Excel 已記錄的 5 筆共同費用</small>
+          </div>
+
+          <div class="budget-table-wrap">
+            <table>
+              <caption class="visually-hidden">Excel 已記錄的旅行共同費用</caption>
+              <thead>
+                <tr>
+                  <th scope="col">項目</th>
+                  <th scope="col">總金額</th>
+                  <th scope="col">每人</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">機票</th>
+                  <td>99,500</td>
+                  <td>9,950</td>
+                </tr>
+                <tr>
+                  <th scope="row">住宿</th>
+                  <td>28,720</td>
+                  <td>2,872</td>
+                </tr>
+                <tr>
+                  <th scope="row">環球影城</th>
+                  <td>19,590</td>
+                  <td>1,959</td>
+                </tr>
+                <tr>
+                  <th scope="row">租車</th>
+                  <td>11,750</td>
+                  <td>1,175</td>
+                </tr>
+                <tr>
+                  <th scope="row">大阪機場接送</th>
+                  <td>9,290</td>
+                  <td>929</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th scope="row">合計</th>
+                  <td>168,850</td>
+                  <td>16,885</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+
+        <article class="expense-book" aria-labelledby="expenseBookTitle">
+          <header class="expense-book-header">
+            <div>
+              <p class="section-kicker">PERSONAL EXPENSES</p>
+              <h3 id="expenseBookTitle">我的旅行記帳</h3>
+              <p>每個名字是一份獨立帳本，原有的每人費用會自動算進總額。</p>
+            </div>
+            <span class="local-badge">只存在這台裝置</span>
+          </header>
+
+          <form class="expense-profile-form" id="expenseProfileForm">
+            <div class="form-field">
+              <label for="expenseProfileSelect">記帳人</label>
+              <select id="expenseProfileSelect">
+                <option value="__new__">新增帳本</option>
+              </select>
+            </div>
+            <div class="form-field" id="expenseNewProfileField">
+              <label for="expenseOwnerName">名字或暱稱</label>
+              <input
+                id="expenseOwnerName"
+                type="text"
+                maxlength="20"
+                autocomplete="nickname"
+                placeholder="例如：小明"
+              />
+            </div>
+            <button class="button button-primary" id="expenseProfileButton" type="submit">
+              建立帳本
+            </button>
+          </form>
+          <p class="form-message" id="expenseProfileMessage" role="status" aria-live="polite"></p>
+
+          <div class="expense-ledger" id="expenseLedger" hidden>
+            <div class="ledger-topbar">
+              <div>
+                <span>目前記帳人</span>
+                <h4 id="expenseActiveName"></h4>
+              </div>
+              <div class="exchange-rate-box">
+                <label for="expenseExchangeRate">日圓換算匯率（選填）</label>
+                <div>
+                  <span>¥1 = NT$</span>
+                  <input
+                    id="expenseExchangeRate"
+                    type="number"
+                    min="0.001"
+                    max="10"
+                    step="0.001"
+                    inputmode="decimal"
+                    placeholder="0.220"
+                    aria-describedby="exchangeRateHelp"
+                  />
+                </div>
+                <small id="exchangeRateHelp">請填自己實際換匯的匯率</small>
+              </div>
+            </div>
+
+            <div class="expense-summary-grid" aria-live="polite">
+              <div>
+                <span>已帶入共同費用</span>
+                <strong id="expenseFixedTotal">NT$ 16,885</strong>
+                <small>機票、住宿、USJ、租車與接送</small>
+              </div>
+              <div>
+                <span>自己新增的支出</span>
+                <strong id="expenseCustomTotal">NT$ 0 · ¥ 0</strong>
+                <small id="expenseEntryCount">0 筆紀錄</small>
+              </div>
+              <div class="expense-grand-total">
+                <span>目前總花費</span>
+                <strong id="expenseGrandTotal">NT$ 16,885</strong>
+                <small id="expenseGrandTotalHint">有日圓支出時會分幣別顯示</small>
+              </div>
+            </div>
+
+            <section class="expense-entry-section" aria-labelledby="addExpenseTitle">
+              <div class="subsection-heading">
+                <div>
+                  <h4 id="addExpenseTitle">新增一筆支出</h4>
+                  <p>金額請輸入整數；日圓與台幣會分開計算。</p>
+                </div>
+              </div>
+
+              <form class="expense-entry-form" id="expenseEntryForm">
+                <div class="form-field">
+                  <label for="expenseDate">日期</label>
+                  <input id="expenseDate" type="date" required />
+                </div>
+                <div class="form-field expense-item-field">
+                  <label for="expenseItem">項目</label>
+                  <input
+                    id="expenseItem"
+                    type="text"
+                    maxlength="40"
+                    placeholder="例如：拉麵"
+                    required
+                  />
+                </div>
+                <div class="form-field">
+                  <label for="expenseCategory">分類</label>
+                  <select id="expenseCategory">
+                    <option value="餐飲">餐飲</option>
+                    <option value="交通">交通</option>
+                    <option value="購物">購物</option>
+                    <option value="景點／門票">景點／門票</option>
+                    <option value="住宿">住宿</option>
+                    <option value="其他">其他</option>
+                  </select>
+                </div>
+                <div class="form-field">
+                  <label for="expenseCurrency">幣別</label>
+                  <select id="expenseCurrency">
+                    <option value="JPY">日圓 JPY</option>
+                    <option value="TWD">台幣 TWD</option>
+                  </select>
+                </div>
+                <div class="form-field">
+                  <label for="expenseAmount">金額</label>
+                  <input
+                    id="expenseAmount"
+                    type="number"
+                    min="1"
+                    step="1"
+                    inputmode="numeric"
+                    placeholder="0"
+                    required
+                  />
+                </div>
+                <button class="button button-primary expense-submit" type="submit">
+                  新增支出
+                </button>
+              </form>
+              <p class="form-message" id="expenseFormMessage" role="alert" aria-live="polite"></p>
+            </section>
+
+            <section class="expense-history-section" aria-labelledby="expenseHistoryTitle">
+              <div class="subsection-heading history-heading">
+                <div>
+                  <h4 id="expenseHistoryTitle">支出紀錄</h4>
+                  <p>依日期由新到舊排列。</p>
+                </div>
+                <div class="expense-category-summary" id="expenseCategorySummary"></div>
+              </div>
+              <ul class="expense-history" id="expenseHistory"></ul>
+              <p class="expense-empty" id="expenseEmpty">還沒有自己新增的支出。</p>
+            </section>
+          </div>
+        </article>
+
+        <div class="privacy-note">
+          <span aria-hidden="true">ⓘ</span>
+          <p>
+            個人帳本只儲存在目前瀏覽器，不會上傳或跨裝置同步；清除瀏覽器資料也會一併刪除。
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <strong>日本畢業旅行 2026</strong>
+        <p>行程依「大老二排日本行程.xlsx」整理。</p>
+      </div>
+      <a href="#top">回到頂端 ↑</a>
+    </footer>
+
+    <button
+      class="currency-converter-trigger"
+      id="currencyConverterTrigger"
+      type="button"
+      aria-haspopup="dialog"
+      aria-controls="currencyConverterDialog"
+      aria-expanded="false"
+      aria-label="開啟日圓換算器"
+      title="日圓換算"
+    >
+      <span aria-hidden="true">¥</span>
+    </button>
+
+    <dialog
+      class="currency-converter-dialog"
+      id="currencyConverterDialog"
+      aria-labelledby="currencyConverterTitle"
+    >
+      <div class="converter-dialog-content">
+        <header class="converter-dialog-header">
+          <div>
+            <p class="section-kicker">CURRENCY CONVERTER</p>
+            <h2 id="currencyConverterTitle">日圓換算</h2>
+          </div>
+          <button
+            class="converter-close"
+            id="currencyConverterClose"
+            type="button"
+            aria-label="關閉日圓換算器"
+          >×</button>
+        </header>
+
+        <p class="converter-intro">輸入實際換匯匯率，快速估算日圓約等於多少台幣。</p>
+
+        <div class="converter-fields">
+          <div class="form-field">
+            <label for="converterRate">日圓換匯匯率</label>
+            <div class="converter-input-with-prefix">
+              <span>¥1 = NT$</span>
+              <input
+                id="converterRate"
+                type="number"
+                min="0.001"
+                max="10"
+                step="0.001"
+                inputmode="decimal"
+                placeholder="0.220"
+              />
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="converterJpyAmount">日圓金額</label>
+            <div class="converter-input-with-prefix">
+              <span>¥</span>
+              <input
+                id="converterJpyAmount"
+                type="number"
+                min="0"
+                step="1"
+                inputmode="numeric"
+                placeholder="輸入日圓"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="converter-quick-amounts" aria-label="快速選擇日圓金額">
+          <button type="button" data-converter-amount="1000">¥1,000</button>
+          <button type="button" data-converter-amount="5000">¥5,000</button>
+          <button type="button" data-converter-amount="10000">¥10,000</button>
+          <button type="button" data-converter-amount="50000">¥50,000</button>
+        </div>
+
+        <div class="converter-result" aria-live="polite">
+          <span>約合台幣</span>
+          <output id="converterTwdResult" for="converterRate converterJpyAmount">NT$ —</output>
+          <small id="converterResultHint">請先輸入匯率與日圓金額</small>
+        </div>
+
+        <p class="converter-rate-source" id="converterRateSource"></p>
+        <button
+          class="converter-apply-rate"
+          id="converterApplyRate"
+          type="button"
+          hidden
+        ></button>
+        <p class="form-message" id="converterStatus" role="status" aria-live="polite"></p>
+        <p class="converter-note">換算結果僅供估算，不會自動修改個人帳本的匯率。</p>
+      </div>
+    </dialog>
+
+    <button class="back-to-top" id="backToTop" type="button" aria-label="回到頁面頂端">
+      ↑
+    </button>
+  </body>
+</html>

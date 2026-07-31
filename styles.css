@@ -770,6 +770,55 @@ a {
   color: var(--muted);
 }
 
+.event-transit {
+  margin-top: 9px;
+  padding: 9px 10px;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 8px;
+  background: var(--surface-soft);
+  border-left: 2px solid var(--primary);
+  border-radius: 0 6px 6px 0;
+  font-size: 11px;
+}
+
+.event-transit-label {
+  padding-top: 1px;
+  color: var(--primary);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.event-transit-content {
+  min-width: 0;
+}
+
+.event-transit-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.event-transit-head strong {
+  line-height: 1.45;
+}
+
+.event-transit-head span {
+  flex: 0 0 auto;
+  color: var(--primary-dark);
+  font-size: 10px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.event-transit p {
+  margin: 3px 0 0;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
 .event-note {
   width: fit-content;
   margin-top: 7px;
@@ -2077,6 +2126,12 @@ a {
   .event-description,
   .event-note {
     font-size: 11px;
+  }
+
+  .event-transit-head {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 2px;
   }
 
   .day-footnote {

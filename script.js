@@ -21,6 +21,12 @@ const tripData = [
         title: "去桃機",
         place: "清大客運站",
         description: "搭日豪客運，從新竹出發。",
+        transit: {
+          from: "清大客運站",
+          to: "桃園國際機場",
+          duration: "約 60–90 分",
+          route: "搭日豪客運直達；行車時間會受國道車流與下車航廈影響。",
+        },
         note: "不搭客運的人可自行前往",
       },
       {
@@ -45,6 +51,12 @@ const tripData = [
         time: "22:30–23:30",
         title: "機場接送",
         description: "搭車前往大阪・柏凱的家。",
+        transit: {
+          from: "關西機場第二航廈",
+          to: "大阪・柏凱的家",
+          duration: "約 60–75 分",
+          route: "依原訂機場接送車直達；抵達時間較晚，不建議臨時改搭鐵路，以免錯過末班地鐵。",
+        },
       },
       {
         time: "23:30–",
@@ -79,6 +91,12 @@ const tripData = [
         title: "午餐",
         place: "はま寿司 守口太子橋店",
         description: "先吃壽司再出發。",
+        transit: {
+          from: "井高野站（I11）",
+          to: "太子橋今市站（I14／T13）",
+          duration: "約 15–20 分",
+          route: "搭 Osaka Metro 今里筋線直達 3 站，出站後步行約 4–6 分到餐廳。",
+        },
         links: [
           {
             label: "開啟地圖",
@@ -91,6 +109,12 @@ const tripData = [
         title: "前往神戶",
         place: "Kobe Station",
         description: "搭車到神戶。",
+        transit: {
+          from: "太子橋今市站",
+          to: "JR 神戶站",
+          duration: "約 55–65 分",
+          route: "谷町線至東梅田，步行轉 JR 大阪站，再搭 JR 神戶線新快速往姬路方向至神戶站。",
+        },
         links: [
           {
             label: "開啟地圖",
@@ -103,6 +127,12 @@ const tripData = [
         title: "神戶港散策",
         place: "BE KOBE Monument · Meriken Park",
         description: "Mosaic、海洋館與港口一帶自由走走。",
+        transit: {
+          from: "JR 神戶站",
+          to: "BE KOBE Monument",
+          duration: "步行約 20–25 分",
+          route: "經 Harborland、Mosaic 沿港邊步行約 1.5 公里；此段不用搭車。",
+        },
         note: "記得跟地標合照",
         links: [
           {
@@ -116,6 +146,12 @@ const tripData = [
         title: "神戶牛燒肉",
         place: "Kobe Beef Yakiniku Okatora Sannomiya",
         description: "晚餐。",
+        transit: {
+          from: "Meriken Park",
+          to: "三宮站／餐廳",
+          duration: "步行約 18–22 分",
+          route: "沿元町、三宮方向步行最直接；餐廳距 JR 三ノ宮站／阪急神戶三宮站約 2 分。",
+        },
         note: "已訂位 · 17:30",
         links: [
           {
@@ -129,6 +165,12 @@ const tripData = [
         title: "搭車回大阪",
         place: "Itakano Station",
         description: "回井高野。",
+        transit: {
+          from: "JR 三ノ宮站",
+          to: "井高野站（I11）",
+          duration: "約 65–80 分",
+          route: "JR 神戶線新快速至大阪，步行轉東梅田；谷町線至太子橋今市，再轉今里筋線至井高野。",
+        },
         links: [
           {
             label: "開啟地圖",
@@ -141,6 +183,12 @@ const tripData = [
         title: "超市掃貨",
         place: "Konomiya",
         description: "採買隔天早餐。",
+        transit: {
+          from: "井高野站",
+          to: "Konomiya",
+          duration: "步行約 5–7 分",
+          route: "超市在住宿附近，此段不用搭地鐵；採買後再步行回家。",
+        },
         note: "隔天要出遠門，不要買太多",
         links: [
           {
@@ -175,6 +223,12 @@ const tripData = [
         title: "前往和歌山",
         place: "Wakayama Station",
         description: "搭電車到和歌山市。",
+        transit: {
+          from: "井高野站（I11）",
+          to: "JR 和歌山站",
+          duration: "約 1 小時 50 分–2 小時",
+          route: "今里筋線至太子橋今市，轉谷町線至天王寺，再搭 JR 阪和線紀州路快速至和歌山；在日根野分車時確認搭的是和歌山車廂。",
+        },
         links: [
           {
             label: "開啟地圖",
@@ -198,6 +252,12 @@ const tripData = [
         title: "前往白良濱",
         place: "Shirahama Station",
         description: "搭車前往白濱。",
+        transit: {
+          from: "JR 和歌山站",
+          to: "JR 白濱站",
+          duration: "約 1 小時 25–35 分",
+          route: "搭 JR 特急黑潮號往白濱／新宮方向直達；全車指定席，請先劃位並依預約班次提早回月台。",
+        },
         links: [
           {
             label: "開啟地圖",
@@ -210,6 +270,12 @@ const tripData = [
         title: "租車",
         place: "TOYOTA Rent a Car",
         description: "取兩台車。",
+        transit: {
+          from: "JR 白濱站",
+          to: "TOYOTA Rent a Car",
+          duration: "步行約 2–3 分",
+          route: "租車店在車站旁，出站後直接步行前往。",
+        },
         note: "已預訂",
         links: [
           {
@@ -285,6 +351,7 @@ const tripData = [
     title: "那智瀑布與海邊煙火",
     route: "白濱 → 那智勝浦 → 田邊",
     status: "confirmed",
+    footnote: "本日全程使用租車移動，不另列地鐵／JR 轉乘；導航、停車與煙火散場時間請依當日路況調整。",
     events: [
       {
         time: "07:30–08:00",
@@ -431,6 +498,12 @@ const tripData = [
         title: "返回大阪",
         place: "Ōtori Station",
         description: "前往大鳥大社一帶。",
+        transit: {
+          from: "JR 紀伊田邊站",
+          to: "JR 鳳站",
+          duration: "約 1 小時 55 分–2 小時 10 分",
+          route: "搭全車指定席特急黑潮號至日根野，轉 JR 阪和線往天王寺方向的快速或普通至鳳；還車店距紀伊田邊站約 2 分。",
+        },
         links: [
           {
             label: "開啟地圖",
@@ -442,6 +515,12 @@ const tripData = [
         time: "13:00–14:30",
         title: "午餐",
         place: "New York New York",
+        transit: {
+          from: "JR 鳳站",
+          to: "New York New York",
+          duration: "步行約 2 分",
+          route: "從鳳站西口步行前往，無須搭車。",
+        },
         note: "備案：Mensho Osakaramen Shiojin Otori Honten",
         links: [
           {
@@ -459,6 +538,12 @@ const tripData = [
         title: "大鳥大社",
         place: "Otori Taisha",
         description: "神社散策。",
+        transit: {
+          from: "New York New York",
+          to: "大鳥大社",
+          duration: "步行約 5 分",
+          route: "沿鳳站西側步行前往，無須搭車。",
+        },
         links: [
           {
             label: "開啟地圖",
@@ -475,6 +560,12 @@ const tripData = [
         title: "前往難波",
         place: "Osaka-Namba Station",
         description: "分成逛街組與卡丁車組。",
+        transit: {
+          from: "JR 鳳站",
+          to: "Osaka Metro なんば站",
+          duration: "約 35–45 分",
+          route: "搭 JR 阪和線快速至天王寺，轉 Osaka Metro 御堂筋線至なんば；大鳥大社先步行約 5 分回鳳站。",
+        },
         links: [
           {
             label: "開啟地圖",
@@ -486,6 +577,12 @@ const tripData = [
         time: "18:00–19:30",
         title: "大阪街頭卡丁車",
         place: "Street Kart Osaka",
+        transit: {
+          from: "Osaka Metro なんば站",
+          to: "四ツ橋站／Street Kart",
+          duration: "約 10–15 分",
+          route: "搭四つ橋線 1 站至四ツ橋，從 6 號出口步行約 4 分；直接從難波步行約 12–15 分也可。",
+        },
         note: "已預訂 · 17:30 開放報到",
         links: [
           {
@@ -499,6 +596,12 @@ const tripData = [
         title: "晚餐",
         place: "心齋橋 / 道頓堀附近",
         description: "從 Tabelog 候選中挑一間。",
+        transit: {
+          from: "Street Kart Osaka",
+          to: "心齋橋／道頓堀",
+          duration: "約 8–20 分",
+          route: "心齋橋候選可直接步行；前往難波、道頓堀可由四ツ橋搭四つ橋線 1 站至なんば，再步行到餐廳。",
+        },
         links: [
           {
             label: "心齋橋一帶餐廳",
@@ -514,6 +617,12 @@ const tripData = [
         time: "隨興回",
         title: "返回大阪住宿",
         place: "大阪・柏凱的家",
+        transit: {
+          from: "心齋橋站／なんば站",
+          to: "井高野站（I11）",
+          duration: "約 36–45 分",
+          route: "心齋橋出發搭長堀鶴見綠地線至蒲生四丁目轉今里筋線；難波出發則搭千日前線至今里轉今里筋線。",
+        },
         note: "自己注意末班車",
         links: osakaHomeLinks,
       },
@@ -543,6 +652,12 @@ const tripData = [
         title: "出發環球",
         place: "Universal Studios Japan",
         description: "搭電車。",
+        transit: {
+          from: "井高野站（I11）",
+          to: "JR Universal City 站",
+          duration: "約 55–65 分",
+          route: "今里筋線至鴫野，轉 JR 學研都市線至京橋；搭大阪環狀線往大阪、西九条方向，未直通時在西九条轉 JR 夢咲線往櫻島。",
+        },
         links: [
           {
             label: "開啟地圖",
@@ -578,6 +693,12 @@ const tripData = [
         title: "晚餐",
         place: "インドネパール料理ニューガンガ",
         description: "印度、尼泊爾料理。",
+        transit: {
+          from: "JR Universal City 站",
+          to: "瑞光四丁目站（I12）",
+          duration: "約 55–65 分",
+          route: "JR 夢咲線至西九条、環狀線至京橋、學研都市線至鴫野，再轉今里筋線往井高野至瑞光四丁目；餐廳距站約 1 分。",
+        },
         note: "22:30 打烊",
         links: [
           {
@@ -590,6 +711,12 @@ const tripData = [
         time: "22:30–",
         title: "返回大阪住宿",
         place: "大阪・柏凱的家",
+        transit: {
+          from: "瑞光四丁目站（I12）",
+          to: "井高野站（I11）",
+          duration: "約 5–10 分",
+          route: "搭今里筋線往井高野 1 站，出站後步行回住宿。",
+        },
         links: osakaHomeLinks,
       },
       {
@@ -618,6 +745,12 @@ const tripData = [
         title: "搭車到奈良",
         place: "Kintetsu-Nara Station",
         description: "搭電車。",
+        transit: {
+          from: "井高野站（I11）",
+          to: "近鐵奈良站",
+          duration: "約 1 小時 05 分–1 小時 20 分",
+          route: "今里筋線至今里，轉千日前線 1 站至鶴橋，再搭近鐵奈良線快速急行或急行至近鐵奈良。",
+        },
         links: [
           {
             label: "開啟地圖",
@@ -630,6 +763,12 @@ const tripData = [
         title: "東向商店街",
         place: "Higashimuki Shopping Street",
         description: "商店街散步、等吃飯。",
+        transit: {
+          from: "近鐵奈良站",
+          to: "東向商店街",
+          duration: "步行約 1–3 分",
+          route: "商店街就在車站旁，無須搭車。",
+        },
         links: [
           {
             label: "開啟地圖",
@@ -642,6 +781,12 @@ const tripData = [
         title: "午餐",
         place: "Yamato An Kintetsu Nara",
         description: "釜飯、定食等鄉土料理。",
+        transit: {
+          from: "東向商店街",
+          to: "Yamato An Kintetsu Nara",
+          duration: "步行約 3–5 分",
+          route: "餐廳在近鐵奈良站旁，沿商店街步行即可。",
+        },
         links: [
           {
             label: "開啟地圖",
@@ -654,6 +799,12 @@ const tripData = [
         title: "奈良公園與東大寺",
         place: "Tōdai-ji",
         description: "跟鹿拜年。",
+        transit: {
+          from: "近鐵奈良站一帶",
+          to: "東大寺",
+          duration: "步行約 20–25 分",
+          route: "建議沿奈良公園步行；想省腳力可在近鐵奈良站搭市內循環公車至「東大寺大佛殿・春日大社前」，再步行約 5 分。",
+        },
         note: "其他候選：春日大社、二月堂",
         links: [
           {
@@ -666,6 +817,12 @@ const tripData = [
         time: "16:30–18:00",
         title: "車站附近吃點心",
         description: "先墊胃。",
+        transit: {
+          from: "東大寺",
+          to: "近鐵奈良站一帶",
+          duration: "約 10–25 分",
+          route: "可步行約 20–25 分返回；或搭公車至近鐵奈良站，車程約 5 分，另留候車時間。",
+        },
         note: "推薦：大佛布丁",
         links: [
           {
@@ -679,6 +836,12 @@ const tripData = [
         title: "回大阪",
         place: "Kita-Shinchi Station",
         description: "搭電車。",
+        transit: {
+          from: "近鐵奈良站",
+          to: "北新地站",
+          duration: "約 55–65 分",
+          route: "搭近鐵奈良線快速急行或急行至大阪難波，步行轉 Osaka Metro なんば站，再搭四つ橋線至西梅田，步行至北新地。",
+        },
         links: [
           {
             label: "開啟地圖",
@@ -690,6 +853,12 @@ const tripData = [
         time: "19:30–21:00",
         title: "大阪表演",
         place: "バーレスク 大阪",
+        transit: {
+          from: "北新地站",
+          to: "バーレスク 大阪",
+          duration: "步行約 3 分",
+          route: "店址在曾根崎新地，從北新地站步行前往即可。",
+        },
         note: "已訂位 · 表演 20:10 開始",
         links: [
           {
@@ -702,6 +871,12 @@ const tripData = [
         time: "21:00–22:30",
         title: "鰻魚飯",
         place: "Unagi Kushiyaki Izumo",
+        transit: {
+          from: "バーレスク 大阪",
+          to: "LUCUA Osaka B2F",
+          duration: "步行約 10–12 分",
+          route: "往大阪站方向步行，餐廳位於 LUCUA Osaka 地下 2 樓。",
+        },
         note: "可能要排隊 · 23:00 打烊",
         links: [
           {
@@ -714,6 +889,12 @@ const tripData = [
         time: "22:30–",
         title: "返回大阪住宿",
         place: "大阪・柏凱的家",
+        transit: {
+          from: "東梅田站（T20）",
+          to: "井高野站（I11）",
+          duration: "約 40–45 分",
+          route: "從 LUCUA 步行至東梅田，搭谷町線往大日至太子橋今市，再轉今里筋線至井高野。",
+        },
         links: osakaHomeLinks,
       },
       {
@@ -735,11 +916,35 @@ const tripData = [
         time: "待安排",
         title: "八坂神社",
         place: "京都",
+        transit: {
+          from: "井高野站（I11）",
+          to: "祇園四條站／八坂神社",
+          duration: "約 1 小時 25–35 分",
+          route: "今里筋線至蒲生四丁目，轉長堀鶴見綠地線 1 站至京橋；步行轉京阪本線特急至祇園四條，再步行約 10–15 分。",
+        },
       },
       {
         time: "待安排",
         title: "清水寺",
         place: "京都",
+        transit: {
+          from: "八坂神社",
+          to: "清水寺",
+          duration: "步行約 25–35 分",
+          route: "經圓山公園、寧寧之道、二年坂與三年坂步行前往；比搭公車更直觀，也能避開東山塞車。",
+        },
+      },
+      {
+        time: "行程結束後",
+        title: "返回大阪住宿",
+        place: "大阪・柏凱的家",
+        transit: {
+          from: "清水五條站",
+          to: "井高野站（I11）",
+          duration: "約 1 小時 40–55 分",
+          route: "從清水寺步行約 25 分至清水五條，搭京阪準急或普通往大阪，可在七條換特急至京橋；轉長堀鶴見綠地線至蒲生四丁目，再轉今里筋線。",
+        },
+        links: osakaHomeLinks,
       },
       {
         time: "24:00–",
@@ -760,11 +965,23 @@ const tripData = [
         time: "待安排",
         title: "金閣寺",
         place: "京都",
+        transit: {
+          from: "井高野站（I11）",
+          to: "金閣寺道巴士站",
+          duration: "約 1 小時 50 分–2 小時 10 分",
+          route: "今里筋線至太子橋今市，轉谷町線至東梅田；步行到 JR 大阪搭新快速至京都，轉地下鐵烏丸線至北大路，再搭市巴士 204／205 至金閣寺道。",
+        },
       },
       {
         time: "待安排",
         title: "午餐",
         place: "とんかつ寿樹 金閣寺店（候選）",
+        transit: {
+          from: "金閣寺",
+          to: "とんかつ寿樹 金閣寺店",
+          duration: "步行約 5–10 分",
+          route: "候選餐廳在金閣寺周邊，直接步行即可。",
+        },
         links: [
           {
             label: "候選餐廳地圖",
@@ -776,6 +993,12 @@ const tripData = [
         time: "待安排",
         title: "嵐山",
         place: "京都",
+        transit: {
+          from: "金閣寺道巴士站",
+          to: "嵐電嵐山站",
+          duration: "約 35–50 分",
+          route: "搭市巴士 204／205 南行至北野白梅町，轉嵐電北野線至帷子ノ辻，再轉嵐山本線至嵐山；另留 10–15 分公車緩衝。",
+        },
         note: "鰻魚店仍可預訂",
         links: [
           {
@@ -787,6 +1010,18 @@ const tripData = [
             url: "https://tabelog.com/tw/kyoto/A2601/A260403/26040926/",
           },
         ],
+      },
+      {
+        time: "行程結束後",
+        title: "返回大阪住宿",
+        place: "大阪・柏凱的家",
+        transit: {
+          from: "阪急嵐山站",
+          to: "井高野站（I11）",
+          duration: "約 1 小時 35–50 分",
+          route: "阪急嵐山線至桂，轉阪急京都線至大阪梅田；步行至東梅田，搭谷町線至太子橋今市，再轉今里筋線至井高野。",
+        },
+        links: osakaHomeLinks,
       },
       {
         time: "24:00–",
@@ -808,22 +1043,52 @@ const tripData = [
         time: "待安排",
         title: "伏見稻荷",
         place: "京都",
+        transit: {
+          from: "井高野站（I11）",
+          to: "京阪伏見稻荷站",
+          duration: "約 1 小時 20–30 分",
+          route: "今里筋線至蒲生四丁目，轉長堀鶴見綠地線至京橋；步行轉京阪特急至丹波橋，再同方向轉準急或普通至伏見稻荷。",
+        },
       },
       {
         time: "待安排",
         title: "宇治散策",
         place: "宇治",
+        transit: {
+          from: "JR 稻荷站",
+          to: "JR 宇治站",
+          duration: "約 20–30 分",
+          route: "參拜後由神社正門旁的 JR 稻荷站搭奈良線往宇治／奈良方向直達 JR 宇治站，無須轉乘。",
+        },
       },
       {
         time: "待安排",
         title: "下午茶",
         place: "中村藤吉",
+        transit: {
+          from: "JR 宇治站／宇治川一帶",
+          to: "中村藤吉本店",
+          duration: "步行約 1–15 分",
+          route: "本店距 JR 宇治站約 1 分；若已走到平等院、宇治川一帶，步行返回約 10–15 分。",
+        },
         links: [
           {
             label: "開啟地圖",
             url: "https://maps.app.goo.gl/CK5gJNxdk4Sdunqd7",
           },
         ],
+      },
+      {
+        time: "行程結束後",
+        title: "返回大阪住宿",
+        place: "大阪・柏凱的家",
+        transit: {
+          from: "JR 宇治站",
+          to: "井高野站（I11）",
+          duration: "約 1 小時 30–45 分",
+          route: "JR 奈良線至京都，轉 JR 京都線新快速至大阪；步行至東梅田，搭谷町線至太子橋今市，再轉今里筋線至井高野。",
+        },
+        links: osakaHomeLinks,
       },
       {
         time: "24:00–",
@@ -850,6 +1115,12 @@ const tripData = [
         time: "08:30–10:00",
         title: "出發勝尾寺",
         place: "Katsuoji",
+        transit: {
+          from: "井高野站（I11）",
+          to: "勝尾寺",
+          duration: "約 1 小時 35–50 分",
+          route: "今里筋線至太子橋今市，轉谷町線至東梅田；步行到梅田站，搭御堂筋線／北大阪急行直通至箕面萱野，再由 8 號乘車處搭阪急巴士 30 直達。",
+        },
         links: [
           {
             label: "開啟地圖",
@@ -867,6 +1138,12 @@ const tripData = [
         title: "午餐",
         place: "Minoh-kayano Station",
         description: "車站附近隨興吃。",
+        transit: {
+          from: "勝尾寺",
+          to: "箕面萱野站",
+          duration: "約 25–45 分",
+          route: "搭阪急巴士 30 直達箕面萱野，車程約 22 分；班距可能約 30 分，離寺前先確認回程。",
+        },
         links: [
           {
             label: "開啟地圖",
@@ -879,6 +1156,12 @@ const tripData = [
         title: "最後採買",
         place: "大阪車站或心齋橋",
         description: "買買買。",
+        transit: {
+          from: "箕面萱野站",
+          to: "梅田站／心齋橋站",
+          duration: "約 25–40 分",
+          route: "搭北大阪急行／御堂筋線直通，至梅田約 25–30 分、至心齋橋約 35–40 分，無須轉乘；選心齋橋較順接晚餐。",
+        },
         links: [
           {
             label: "參考地圖",
@@ -890,6 +1173,12 @@ const tripData = [
         time: "20:00–21:30",
         title: "壽司吃到飽",
         place: "Sushi Bar FUJIYAMA TOKYO Osaka Namba",
+        transit: {
+          from: "心齋橋／大阪站",
+          to: "四ツ橋站／餐廳",
+          duration: "約 5–20 分",
+          route: "心齋橋採買可步行約 5–10 分；大阪站採買則由西梅田搭四つ橋線至四ツ橋，再步行前往北堀江店。",
+        },
         note: "已訂位 · 20:00",
         links: [
           {
@@ -902,6 +1191,12 @@ const tripData = [
         time: "21:30–22:30",
         title: "返回大阪住宿",
         place: "大阪・柏凱的家",
+        transit: {
+          from: "心齋橋站",
+          to: "井高野站（I11）",
+          duration: "約 40–50 分",
+          route: "搭長堀鶴見綠地線至蒲生四丁目，再轉今里筋線至井高野。",
+        },
         links: osakaHomeLinks,
       },
       {
@@ -909,6 +1204,12 @@ const tripData = [
         title: "整理行李與洗衣",
         place: "大型コインランドリーTOYOTSU",
         description: "整理行李、打掃、洗棉被。",
+        transit: {
+          from: "大阪・柏凱的家",
+          to: "大型コインランドリーTOYOTSU",
+          duration: "步行約 5–7 分",
+          route: "洗衣店在井高野住宿附近，此段不用搭車。",
+        },
         links: [
           {
             label: "開啟地圖",
@@ -942,6 +1243,12 @@ const tripData = [
         time: "04:30–05:30",
         title: "機場接送",
         description: "搭車前往關西機場第二航廈。",
+        transit: {
+          from: "大阪・柏凱的家",
+          to: "關西機場第二航廈",
+          duration: "約 60–75 分",
+          route: "搭預約接送車直達；井高野首班地鐵約 05:00，還需轉乘至 T2，不適合 07:55 班機。",
+        },
       },
       {
         time: "抵達後",
@@ -1087,6 +1394,23 @@ function renderLinks(links = []) {
     .join("");
 }
 
+function renderTransit(transit) {
+  if (!transit?.from || !transit?.to || !transit?.route) return "";
+
+  return `
+    <div class="event-transit" aria-label="交通方式">
+      <span class="event-transit-label">交通</span>
+      <div class="event-transit-content">
+        <div class="event-transit-head">
+          <strong>${escapeHtml(transit.from)} → ${escapeHtml(transit.to)}</strong>
+          ${transit.duration ? `<span>${escapeHtml(transit.duration)}</span>` : ""}
+        </div>
+        <p>${escapeHtml(transit.route)}</p>
+      </div>
+    </div>
+  `;
+}
+
 function renderEvent(event) {
   return `
     <li class="timeline-item">
@@ -1099,6 +1423,7 @@ function renderEvent(event) {
             ? `<p class="event-description">${escapeHtml(event.description)}</p>`
             : ""
         }
+        ${renderTransit(event.transit)}
         ${event.note ? `<p class="event-note">${escapeHtml(event.note)}</p>` : ""}
         ${renderLinks(event.links)}
       </div>

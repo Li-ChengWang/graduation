@@ -977,6 +977,10 @@ const menuToggle = document.querySelector("#menuToggle");
 const menuClose = document.querySelector("#menuClose");
 const menuBackdrop = document.querySelector("#menuBackdrop");
 const mobileMenu = document.querySelector("#mobileMenu");
+const sectionTabs = document.querySelector("#sectionTabs");
+const sectionTabLinks = [...document.querySelectorAll("[data-section-tab]")];
+const sectionPanels = [...document.querySelectorAll("[data-section-panel]")];
+const drawerSectionLinks = [...mobileMenu.querySelectorAll("nav a[href^='#']")];
 const expenseProfileForm = document.querySelector("#expenseProfileForm");
 const expenseProfileSelect = document.querySelector("#expenseProfileSelect");
 const expenseNewProfileField = document.querySelector("#expenseNewProfileField");
@@ -1128,7 +1132,7 @@ function updateToggleAllButton() {
   toggleAllDays.setAttribute("aria-expanded", String(allOpen));
 }
 
-function openDay(index, shouldScroll = true) {
+function openDay(index, shouldScroll = true, scrollBehavior = "smooth") {
   const cards = getDayCards();
   const target = cards[index];
   if (!target) return;
@@ -1136,10 +1140,13 @@ function openDay(index, shouldScroll = true) {
   target.open = true;
 
   if (shouldScroll) {
-    target.scrollIntoView({ behavior: "smooth", block: "start" });
+    const behavior = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+      ? "auto"
+      : scrollBehavior;
+    target.scrollIntoView({ behavior, block: "start" });
     window.setTimeout(() => {
       target.querySelector("summary")?.focus({ preventScroll: true });
-    }, 450);
+    }, behavior === "smooth" ? 450 : 0);
   }
 }
 
@@ -1718,6 +1725,157 @@ function handleMenuKeydown(event) {
   }
 }
 
+function normalizeRouteHash(hash = window.location.hash) {
+  let route = String(hash).replace(/^#/, "");
+  try {
+    route = decodeURIComponent(route);
+  } catch {
+    // Keep the original value when the URL contains malformed encoding.
+  }
+  return route.replace(/^\/+/, "").replace(/\/+$/, "");
+}
+
+function getDayRoute(index) {
+  const day = tripData[index];
+  return day ? `day-${day.date.slice(5).replace("-", "")}` : "";
+}
+
+function getDayIndexFromRoute(route) {
+  return tripData.findIndex((_, index) => getDayRoute(index) === route);
+}
+
+function getSectionIdForRoute(route) {
+  if (sectionPanels.some((panel) => panel.dataset.sectionPanel === route)) return route;
+  return getDayIndexFromRoute(route) >= 0 ? "itinerary" : null;
+}
+
+function keepActiveSectionTabVisible(activeTab) {
+  const track = sectionTabs.querySelector(".section-tabs-inner");
+  if (!track || track.scrollWidth <= track.clientWidth) return;
+
+  const tabLeft = activeTab.offsetLeft;
+  const tabRight = tabLeft + activeTab.offsetWidth;
+  const viewLeft = track.scrollLeft;
+  const viewRight = viewLeft + track.clientWidth;
+  let nextLeft = null;
+
+  if (tabLeft < viewLeft) nextLeft = Math.max(0, tabLeft - 14);
+  if (tabRight > viewRight) nextLeft = tabRight - track.clientWidth + 14;
+  if (nextLeft === null) return;
+
+  track.scrollTo({
+    left: nextLeft,
+    behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+      ? "auto"
+      : "smooth",
+  });
+}
+
+function updateSectionNavigation(sectionId) {
+  sectionTabLinks.forEach((link) => {
+    if (link.dataset.sectionTab === sectionId) {
+      link.setAttribute("aria-current", "page");
+    } else {
+      link.removeAttribute("aria-current");
+    }
+  });
+
+  drawerSectionLinks.forEach((link) => {
+    const linkSectionId = normalizeRouteHash(link.getAttribute("href"));
+    if (linkSectionId === sectionId) {
+      link.setAttribute("aria-current", "page");
+    } else {
+      link.removeAttribute("aria-current");
+    }
+  });
+
+  const activeTab = sectionTabLinks.find((link) => link.dataset.sectionTab === sectionId);
+  if (activeTab) window.requestAnimationFrame(() => keepActiveSectionTabVisible(activeTab));
+}
+
+function activateSection(sectionId) {
+  if (!getSectionIdForRoute(sectionId) || getDayIndexFromRoute(sectionId) >= 0) return false;
+
+  sectionPanels.forEach((panel) => {
+    panel.hidden = panel.dataset.sectionPanel !== sectionId;
+  });
+  updateSectionNavigation(sectionId);
+  return true;
+}
+
+function scrollToSection(sectionId, { behavior = "smooth", focus = false } = {}) {
+  const panel = sectionPanels.find((item) => item.dataset.sectionPanel === sectionId);
+  if (!panel) return;
+
+  const preferredBehavior = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ? "auto"
+    : behavior;
+  window.requestAnimationFrame(() => {
+    panel.scrollIntoView({ behavior: preferredBehavior, block: "start" });
+    if (!focus) return;
+
+    window.setTimeout(() => {
+      const heading = panel.querySelector("h2");
+      if (heading) {
+        heading.setAttribute("tabindex", "-1");
+        heading.focus({ preventScroll: true });
+      } else {
+        panel.focus({ preventScroll: true });
+      }
+    }, preferredBehavior === "smooth" ? 420 : 0);
+  });
+}
+
+function pushRoute(route) {
+  const canonicalHash = `#${route}`;
+  if (window.location.hash === canonicalHash) return;
+  window.history.pushState(null, "", canonicalHash);
+}
+
+function navigateToSection(sectionId, { focus = false } = {}) {
+  if (!activateSection(sectionId)) return;
+  pushRoute(sectionId);
+  scrollToSection(sectionId, { focus });
+}
+
+function navigateToDay(index) {
+  const route = getDayRoute(index);
+  if (!route) return;
+
+  activateSection("itinerary");
+  pushRoute(route);
+  window.requestAnimationFrame(() => openDay(index));
+}
+
+function syncSectionFromLocation({ initial = false, scroll = false } = {}) {
+  const route = normalizeRouteHash();
+
+  if (!route) {
+    activateSection("itinerary");
+    return;
+  }
+
+  const sectionId = getSectionIdForRoute(route);
+  if (!sectionId) {
+    if (initial) activateSection("itinerary");
+    return;
+  }
+
+  activateSection(sectionId);
+  const dayIndex = getDayIndexFromRoute(route);
+  if (dayIndex >= 0) {
+    window.requestAnimationFrame(() => openDay(dayIndex, scroll, initial ? "auto" : "smooth"));
+  } else if (scroll) {
+    scrollToSection(sectionId, { behavior: initial ? "auto" : "smooth" });
+  }
+}
+
+function initializeSectionNavigation() {
+  const route = normalizeRouteHash();
+  const hasRecognizedRoute = Boolean(getSectionIdForRoute(route));
+  syncSectionFromLocation({ initial: true, scroll: hasRecognizedRoute });
+}
+
 function handleScroll() {
   const isScrolled = window.scrollY > 24;
   siteHeader.classList.toggle("scrolled", isScrolled);
@@ -1730,6 +1888,7 @@ renderChecklist();
 initializeExpenseBook();
 updateTripStatus();
 updateToggleAllButton();
+initializeSectionNavigation();
 handleScroll();
 
 toggleAllDays.addEventListener("click", () => {
@@ -1993,6 +2152,14 @@ currencyConverterDialog.addEventListener("close", () => {
   currencyConverterTrigger.focus();
 });
 
+sectionTabs.addEventListener("click", (event) => {
+  const link = event.target.closest("[data-section-tab]");
+  if (!link) return;
+
+  event.preventDefault();
+  navigateToSection(link.dataset.sectionTab);
+});
+
 menuToggle.addEventListener("click", () => {
   if (mobileMenu.hidden) {
     openMenu();
@@ -2003,13 +2170,19 @@ menuToggle.addEventListener("click", () => {
 menuClose.addEventListener("click", () => closeMenu());
 menuBackdrop.addEventListener("click", () => closeMenu());
 mobileMenu.addEventListener("keydown", handleMenuKeydown);
-mobileMenu.querySelectorAll("a").forEach((link) => {
-  link.addEventListener("click", () => closeMenu(false));
+drawerSectionLinks.forEach((link) => {
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+    closeMenu();
+    navigateToSection(normalizeRouteHash(link.getAttribute("href")), { focus: true });
+  });
 });
 mobileDayLinks.querySelectorAll("a").forEach((link) => {
   link.addEventListener("click", (event) => {
+    event.preventDefault();
     const dayIndex = Number(event.currentTarget.dataset.dayIndex);
-    window.setTimeout(() => openDay(dayIndex), 0);
+    closeMenu();
+    navigateToDay(dayIndex);
   });
 });
 
@@ -2017,6 +2190,8 @@ backToTop.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 window.addEventListener("scroll", handleScroll, { passive: true });
+window.addEventListener("hashchange", () => syncSectionFromLocation({ scroll: true }));
+window.addEventListener("popstate", () => syncSectionFromLocation({ scroll: true }));
 
 window.addEventListener("storage", (event) => {
   if (event.key === expenseBookStorageKey) {

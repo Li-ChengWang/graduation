@@ -137,7 +137,38 @@
         </div>
       </section>
 
-      <section class="section itinerary-section" id="itinerary">
+      <nav class="section-tabs" id="sectionTabs" aria-label="旅程內容分頁">
+        <div class="section-tabs-inner">
+          <a
+            class="section-tab"
+            href="#itinerary"
+            aria-current="page"
+            data-section-tab="itinerary"
+          ><span class="section-tab-full">每日行程</span><span class="section-tab-short">行程</span></a>
+          <a
+            class="section-tab"
+            href="#essentials"
+            data-section-tab="essentials"
+          ><span class="section-tab-full">行前準備</span><span class="section-tab-short">行前</span></a>
+          <a
+            class="section-tab"
+            href="#references"
+            data-section-tab="references"
+          ><span class="section-tab-full">旅遊參考</span><span class="section-tab-short">地圖</span></a>
+          <a
+            class="section-tab"
+            href="#budget"
+            data-section-tab="budget"
+          ><span class="section-tab-full">費用記帳</span><span class="section-tab-short">費用</span></a>
+        </div>
+      </nav>
+
+      <section
+        class="section itinerary-section tab-panel"
+        id="itinerary"
+        tabindex="-1"
+        data-section-panel="itinerary"
+      >
         <div class="section-heading">
           <div>
             <p class="section-kicker">THE ITINERARY</p>
@@ -165,7 +196,12 @@
         </noscript>
       </section>
 
-      <section class="section essentials-section" id="essentials">
+      <section
+        class="section essentials-section tab-panel"
+        id="essentials"
+        tabindex="-1"
+        data-section-panel="essentials"
+      >
         <div class="section-heading light-heading">
           <div>
             <p class="section-kicker">BEFORE WE GO</p>
@@ -268,7 +304,12 @@
         </div>
       </section>
 
-      <section class="section references-section" id="references">
+      <section
+        class="section references-section tab-panel"
+        id="references"
+        tabindex="-1"
+        data-section-panel="references"
+      >
         <div class="section-heading">
           <div>
             <p class="section-kicker">TRAVEL REFERENCES</p>
@@ -362,7 +403,12 @@
         </div>
       </section>
 
-      <section class="section budget-section" id="budget">
+      <section
+        class="section budget-section tab-panel"
+        id="budget"
+        tabindex="-1"
+        data-section-panel="budget"
+      >
         <div class="section-heading">
           <div>
             <p class="section-kicker">TRIP BUDGET</p>

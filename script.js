@@ -68,6 +68,8 @@ const tripData = [
       {
         time: "24:00–",
         title: "休息",
+        place: "大阪・柏凱的家",
+        links: osakaHomeLinks,
       },
     ],
   },
@@ -200,6 +202,8 @@ const tripData = [
       {
         time: "24:00–",
         title: "休息",
+        place: "大阪・柏凱的家",
+        links: osakaHomeLinks,
       },
     ],
   },
@@ -243,7 +247,7 @@ const tripData = [
         links: [
           {
             label: "附近美食",
-            url: "https://tabelog.com/tw/wakayama/A3001/A300101/R10676/rstLst/?LstSmoking=0&SrtT=rt&railroad=true",
+            url: "https://tabelog.com/tw/wakayama/A3001/A300101/R10676/rstLst/?LstSmoking=0&SrtT=rt&railroad=true&svd=20260731&svps=2&svt=1900&vac_net=0",
           },
         ],
       },
@@ -341,6 +345,13 @@ const tripData = [
       {
         time: "24:00–",
         title: "休息",
+        place: "Suzukaze · 白濱",
+        links: [
+          {
+            label: "開啟地圖",
+            url: "https://maps.app.goo.gl/yjXLZH9Xd55JE63T7",
+          },
+        ],
       },
     ],
   },
@@ -358,6 +369,12 @@ const tripData = [
         title: "早安",
         place: "Suzukaze · 白濱",
         description: "起床、整理退房。",
+        links: [
+          {
+            label: "開啟地圖",
+            url: "https://maps.app.goo.gl/6Lv5BtbTnpbQSxNW6",
+          },
+        ],
       },
       {
         time: "08:30–10:30",
@@ -412,6 +429,7 @@ const tripData = [
         time: "時間彈性",
         title: "超市買晚餐",
         place: "Gourmet City Shirahama",
+        description: "採買沙灘野餐的食物。",
         links: [
           {
             label: "開啟地圖",
@@ -552,6 +570,10 @@ const tripData = [
           {
             label: "景點介紹",
             url: "https://osaka-info.jp/zh-Hant-TW/spot/otoritaisha/",
+          },
+          {
+            label: "導覽影片",
+            url: "https://www.youtube.com/watch?v=owh2UXkv01M",
           },
         ],
       },
@@ -779,17 +801,18 @@ const tripData = [
       {
         time: "11:30–13:00",
         title: "午餐",
-        place: "Yamato An Kintetsu Nara",
-        description: "釜飯、定食等鄉土料理。",
+        place: "近鐵奈良站周邊",
+        description: "看當天狀況隨興吃。",
         transit: {
           from: "東向商店街",
-          to: "Yamato An Kintetsu Nara",
-          duration: "步行約 3–5 分",
-          route: "餐廳在近鐵奈良站旁，沿商店街步行即可。",
+          to: "近鐵奈良站周邊餐廳",
+          duration: "步行約 3–10 分",
+          route: "以近鐵奈良站及東向商店街周邊為主，此段不需搭車。",
         },
+        note: "推薦：Yamato An Kintetsu Nara",
         links: [
           {
-            label: "開啟地圖",
+            label: "推薦餐廳地圖",
             url: "https://maps.app.goo.gl/Pr74oVQT7bsge8Vg7",
           },
         ],
@@ -811,6 +834,10 @@ const tripData = [
             label: "開啟地圖",
             url: "https://maps.app.goo.gl/WYEN3c6JHhbNCGr39",
           },
+          {
+            label: "春日大社・二月堂",
+            url: "https://maps.app.goo.gl/7sJHofqEAU4aVDNW8",
+          },
         ],
       },
       {
@@ -825,6 +852,10 @@ const tripData = [
         },
         note: "推薦：大佛布丁",
         links: [
+          {
+            label: "附近甜點",
+            url: "https://tabelog.com/tw/rstLst/?PG=1&from_search=&voluntary_search=1&from_search_form=1&lid=&SrtT=rt&pcd=29&LstPrf=A2901&LstAre=A290101&station_id=3387&Cat=SC&LstCat=0&RdoCosTp=2&LstCos=0&LstCosT=0&vac_net=0&search_date=2026-7-31+%28%E6%98%9F%E6%9C%9F%E4%BA%94%29+&svd=20260731&svt=1900&svps=2&LstRev=0&LstSitu=0&LstSmoking=0",
+          },
           {
             label: "大佛布丁",
             url: "https://maps.app.goo.gl/SyfQ9Tjwnz8o6L1L6",
@@ -842,10 +873,15 @@ const tripData = [
           duration: "約 55–65 分",
           route: "搭近鐵奈良線快速急行或急行至大阪難波，步行轉 Osaka Metro なんば站，再搭四つ橋線至西梅田，步行至北新地。",
         },
+        note: "推薦：法式千層酥",
         links: [
           {
             label: "開啟地圖",
             url: "https://maps.app.goo.gl/JUaJkuHVCzFiVUo79",
+          },
+          {
+            label: "法式千層酥",
+            url: "https://maps.app.goo.gl/Qoi6BrK1V3KQNpTs9",
           },
         ],
       },
@@ -908,41 +944,102 @@ const tripData = [
     dateLabel: "08.14",
     weekday: "FRI · 星期五",
     title: "京都東山散策",
-    route: "大阪 → 京都 → 大阪",
-    status: "planning",
-    footnote: "這一天在 Excel 中仍是草稿，時間、交通與用餐都還需要補上。",
+    route: "大阪 → 京都河原町・東山 → 大阪",
+    status: "confirmed",
+    footnote: "08/14–08/16 為盂蘭盆特別時段；Osaka Metro 與京都市巴士採假日時刻，交通時間為區間估算，出發前請再核對當班。",
     events: [
       {
-        time: "待安排",
-        title: "八坂神社",
-        place: "京都",
+        time: "08:30–09:00",
+        title: "早安",
+        place: "大阪・柏凱的家",
+        description: "起床、準備出門。",
+        links: osakaHomeLinks,
+      },
+      {
+        time: "10:00–11:30",
+        title: "前往京都河原町",
+        place: "Kyoto-Kawaramachi Station",
+        description: "搭電車前往京都。",
         transit: {
           from: "井高野站（I11）",
-          to: "祇園四條站／八坂神社",
-          duration: "約 1 小時 25–35 分",
-          route: "今里筋線至蒲生四丁目，轉長堀鶴見綠地線 1 站至京橋；步行轉京阪本線特急至祇園四條，再步行約 10–15 分。",
+          to: "京都河原町站（HK86）",
+          duration: "約 1 小時 20–35 分",
+          route: "搭今里筋線至太子橋今市，轉谷町線至東梅田；步行至大阪梅田站，再搭阪急京都線特急至京都河原町。",
         },
+        links: [
+          {
+            label: "開啟地圖",
+            url: "https://maps.app.goo.gl/QTXujt1CnARrh1Z48",
+          },
+        ],
       },
       {
-        time: "待安排",
-        title: "清水寺",
-        place: "京都",
+        time: "11:30–13:00",
+        title: "午餐",
+        place: "京都河原町站周邊",
+        description: "在河原町周邊隨興吃。",
+        links: [
+          {
+            label: "附近美食",
+            url: "https://tabelog.com/tw/kyoto/A2601/A260201/R2933/rstLst/?LstCosT=4&LstSmoking=0&RdoCosTp=1&SrtT=inbound_access&railroad=true&svd=20260801&svps=2&svt=1900&vac_net=0",
+          },
+        ],
+      },
+      {
+        time: "13:00–14:30",
+        title: "花見小路・八坂神社・知恩院",
+        place: "Yasaka Shrine",
+        description: "沿祇園與東山一帶步行參觀。",
         transit: {
-          from: "八坂神社",
-          to: "清水寺",
-          duration: "步行約 25–35 分",
-          route: "經圓山公園、寧寧之道、二年坂與三年坂步行前往；比搭公車更直觀，也能避開東山塞車。",
+          from: "京都河原町站",
+          to: "花見小路／八坂神社／知恩院",
+          duration: "步行約 25–40 分",
+          route: "穿過四條大橋後沿花見小路走向八坂神社，再往北步行到知恩院；此段不需搭車。",
         },
+        links: [
+          {
+            label: "開啟地圖",
+            url: "https://maps.app.goo.gl/B4UErJHA61TVP7DWA",
+          },
+        ],
       },
       {
-        time: "行程結束後",
+        time: "14:30–17:00",
+        title: "二年坂・三年坂・清水寺",
+        place: "Kiyomizu-dera",
+        description: "途中可視時間經過靈山歷史館。",
+        transit: {
+          from: "八坂神社／知恩院",
+          to: "清水寺",
+          duration: "步行約 30–40 分",
+          route: "經圓山公園、寧寧之道、二年坂與三年坂步行前往；東山景點間步行通常比搭公車直觀。",
+        },
+        links: [
+          {
+            label: "開啟地圖",
+            url: "https://maps.app.goo.gl/NxcwzHjQd969WEx98",
+          },
+          {
+            label: "靈山歷史館",
+            url: "https://maps.app.goo.gl/ZwzW5gBmKNZKgXY86",
+          },
+        ],
+      },
+      {
+        time: "17:30–",
+        title: "晚餐",
+        description: "依當天進度在京都吃，或回大阪再吃。",
+        note: "也可回去再吃",
+      },
+      {
+        time: "晚餐後",
         title: "返回大阪住宿",
         place: "大阪・柏凱的家",
         transit: {
-          from: "清水五條站",
+          from: "京都河原町站／清水五條站",
           to: "井高野站（I11）",
-          duration: "約 1 小時 40–55 分",
-          route: "從清水寺步行約 25 分至清水五條，搭京阪準急或普通往大阪，可在七條換特急至京橋；轉長堀鶴見綠地線至蒲生四丁目，再轉今里筋線。",
+          duration: "約 1 小時 20 分–1 小時 55 分",
+          route: "在河原町可搭阪急特急至大阪梅田，步行轉東梅田的谷町線；若從清水寺直接離開，可步行到清水五條搭京阪線至京橋，再轉地鐵回井高野。",
         },
         links: osakaHomeLinks,
       },
@@ -956,70 +1053,121 @@ const tripData = [
     date: "2026-08-15",
     dateLabel: "08.15",
     weekday: "SAT · 星期六",
-    title: "金閣寺與嵐山",
-    route: "京都西北・嵐山",
-    status: "planning",
-    footnote: "這一天在 Excel 中仍是草稿；鰻魚店與午餐尚未定案。",
+    title: "金閣寺・二条城・梅田",
+    route: "大阪 → 京都 → 梅田 → 大阪",
+    status: "confirmed",
+    footnote: "08/14–08/16 為盂蘭盆特別時段；Osaka Metro 與京都市巴士採假日時刻，交通時間為區間估算，出發前請再核對當班。",
     events: [
       {
-        time: "待安排",
-        title: "金閣寺",
-        place: "京都",
+        time: "08:00–09:00",
+        title: "早安",
+        place: "大阪・柏凱的家",
+        description: "起床、準備出門。",
+        links: osakaHomeLinks,
+      },
+      {
+        time: "09:00–11:00",
+        title: "前往金閣寺",
+        place: "Kinkaku-ji",
+        description: "搭電車與公車前往。",
         transit: {
           from: "井高野站（I11）",
           to: "金閣寺道巴士站",
           duration: "約 1 小時 50 分–2 小時 10 分",
-          route: "今里筋線至太子橋今市，轉谷町線至東梅田；步行到 JR 大阪搭新快速至京都，轉地下鐵烏丸線至北大路，再搭市巴士 204／205 至金閣寺道。",
-        },
-      },
-      {
-        time: "待安排",
-        title: "午餐",
-        place: "とんかつ寿樹 金閣寺店（候選）",
-        transit: {
-          from: "金閣寺",
-          to: "とんかつ寿樹 金閣寺店",
-          duration: "步行約 5–10 分",
-          route: "候選餐廳在金閣寺周邊，直接步行即可。",
+          route: "今里筋線至太子橋今市，轉谷町線至東梅田；步行至 JR 大阪搭新快速至京都，轉地下鐵烏丸線至北大路，再由北大路巴士總站搭市巴士 204／205 至金閣寺道。",
         },
         links: [
           {
-            label: "候選餐廳地圖",
-            url: "https://maps.app.goo.gl/vJnYhzD1jbyuPdUV7",
+            label: "開啟地圖",
+            url: "https://maps.app.goo.gl/DKgbyk55yZKcEeATA",
           },
         ],
       },
       {
-        time: "待安排",
-        title: "嵐山",
-        place: "京都",
+        time: "11:00–12:00",
+        title: "金閣寺",
+        description: "參觀金閣寺。",
+      },
+      {
+        time: "12:30–14:00",
+        title: "二条城附近午餐",
+        place: "Nijō Castle",
+        description: "到二条城周邊後隨興吃。",
         transit: {
           from: "金閣寺道巴士站",
-          to: "嵐電嵐山站",
-          duration: "約 35–50 分",
-          route: "搭市巴士 204／205 南行至北野白梅町，轉嵐電北野線至帷子ノ辻，再轉嵐山本線至嵐山；另留 10–15 分公車緩衝。",
+          to: "二条城前巴士站",
+          duration: "約 30–45 分",
+          route: "搭京都市巴士 12 往四條河原町／三條京阪方向，至二条城前下車；京都路況易浮動，請另留候車緩衝。",
         },
-        note: "鰻魚店仍可預訂",
         links: [
           {
-            label: "鰻魚屋 廣川",
-            url: "https://tabelog.com/tw/kyoto/A2601/A260403/26000921/",
+            label: "二条城地圖",
+            url: "https://maps.app.goo.gl/MC5xTRFDeDbzrxUP9",
           },
           {
-            label: "嵐山 鰻秀",
-            url: "https://tabelog.com/tw/kyoto/A2601/A260403/26040926/",
+            label: "附近美食",
+            url: "https://tabelog.com/tw/kyoto/A2601/A260203/R7595/rstLst/2/?LstCosT=4&LstSmoking=0&RdoCosTp=1&SrtT=rt&railroad=true&svd=20260801&svps=2&svt=1900&vac_net=0",
           },
         ],
       },
       {
-        time: "行程結束後",
+        time: "14:00–16:00",
+        title: "二条城",
+        place: "Nijō Castle",
+        description: "參觀二条城。",
+        links: [
+          {
+            label: "開啟地圖",
+            url: "https://maps.app.goo.gl/MC5xTRFDeDbzrxUP9",
+          },
+        ],
+      },
+      {
+        time: "16:00–20:00",
+        title: "回梅田・逛街",
+        place: "Osaka Station",
+        description: "回大阪車站一帶逛街。",
+        transit: {
+          from: "地下鐵二条城前站（T14）",
+          to: "JR 大阪站",
+          duration: "約 55–70 分",
+          route: "搭地下鐵東西線 1 站至烏丸御池，轉烏丸線至京都站；再轉 JR 京都線新快速至大阪站。",
+        },
+        links: [
+          {
+            label: "開啟地圖",
+            url: "https://maps.app.goo.gl/T5dsnQQfMzW1iLyD6",
+          },
+        ],
+      },
+      {
+        time: "20:30–22:30",
+        title: "壽喜燒吃到飽",
+        place: "Niku-no-Asatsu Umeda Ohatsu Tenjin",
+        description: "壽喜燒、涮涮鍋與壽司吃到飽。",
+        transit: {
+          from: "JR 大阪站",
+          to: "Niku-no-Asatsu Umeda Ohatsu Tenjin",
+          duration: "步行約 9–12 分",
+          route: "從 JR 大阪站御堂筋南口往曾根崎、お初天神方向步行；餐廳距東梅田 7 號出口約 3 分。",
+        },
+        note: "已訂位",
+        links: [
+          {
+            label: "開啟地圖",
+            url: "https://maps.app.goo.gl/Fz6qTpBbg3PNBVQH6",
+          },
+        ],
+      },
+      {
+        time: "22:30–",
         title: "返回大阪住宿",
         place: "大阪・柏凱的家",
         transit: {
-          from: "阪急嵐山站",
+          from: "東梅田站（T20）",
           to: "井高野站（I11）",
-          duration: "約 1 小時 35–50 分",
-          route: "阪急嵐山線至桂，轉阪急京都線至大阪梅田；步行至東梅田，搭谷町線至太子橋今市，再轉今里筋線至井高野。",
+          duration: "約 35–45 分",
+          route: "從餐廳步行至東梅田，搭谷町線往大日至太子橋今市，轉今里筋線至井高野。",
         },
         links: osakaHomeLinks,
       },
@@ -1033,60 +1181,142 @@ const tripData = [
     date: "2026-08-16",
     dateLabel: "08.16",
     weekday: "SUN · 星期日",
-    title: "伏見稻荷與宇治",
-    route: "京都南區 → 宇治",
-    status: "planning",
-    footnote:
-      "Excel 原文為「福見稻和」，此版暫按「伏見稻荷」呈現，請確認景點名稱與完整時間。",
+    title: "伏見稻荷・宇治抹茶",
+    route: "大阪 → 伏見稻荷 → 宇治 → 大阪",
+    status: "confirmed",
+    footnote: "08/14–08/16 為盂蘭盆特別時段；Osaka Metro 採假日時刻，交通時間為區間估算，出發前請再核對當班。",
     events: [
       {
-        time: "待安排",
-        title: "伏見稻荷",
-        place: "京都",
+        time: "08:00–09:00",
+        title: "早安",
+        place: "大阪・柏凱的家",
+        description: "起床、準備出門。",
+        links: osakaHomeLinks,
+      },
+      {
+        time: "09:00–10:30",
+        title: "前往伏見稻荷",
+        place: "Fushimi Inari Taisha",
+        description: "搭電車前往伏見稻荷大社。",
         transit: {
           from: "井高野站（I11）",
           to: "京阪伏見稻荷站",
-          duration: "約 1 小時 20–30 分",
-          route: "今里筋線至蒲生四丁目，轉長堀鶴見綠地線至京橋；步行轉京阪特急至丹波橋，再同方向轉準急或普通至伏見稻荷。",
-        },
-      },
-      {
-        time: "待安排",
-        title: "宇治散策",
-        place: "宇治",
-        transit: {
-          from: "JR 稻荷站",
-          to: "JR 宇治站",
-          duration: "約 20–30 分",
-          route: "參拜後由神社正門旁的 JR 稻荷站搭奈良線往宇治／奈良方向直達 JR 宇治站，無須轉乘。",
-        },
-      },
-      {
-        time: "待安排",
-        title: "下午茶",
-        place: "中村藤吉",
-        transit: {
-          from: "JR 宇治站／宇治川一帶",
-          to: "中村藤吉本店",
-          duration: "步行約 1–15 分",
-          route: "本店距 JR 宇治站約 1 分；若已走到平等院、宇治川一帶，步行返回約 10–15 分。",
+          duration: "約 1 小時 15–30 分",
+          route: "今里筋線至太子橋今市，轉谷町線至天滿橋；步行轉京阪特急至丹波橋，再同方向轉準急或普通至伏見稻荷。",
         },
         links: [
           {
             label: "開啟地圖",
+            url: "https://maps.app.goo.gl/H5s25DC1GfUmWvqb7",
+          },
+        ],
+      },
+      {
+        time: "10:30–12:00",
+        title: "伏見稻荷大社",
+        description: "穿過千本鳥居參觀。",
+      },
+      {
+        time: "12:00–13:30",
+        title: "午餐",
+        place: "伏見稻荷站周邊",
+        description: "在伏見稻荷周邊隨興吃。",
+        links: [
+          {
+            label: "附近美食",
+            url: "https://tabelog.com/tw/kyoto/A2601/A260601/R8797/rstLst/?LstCosT=3&LstSmoking=0&RdoCosTp=1&SrtT=rt&railroad=true&svd=20260801&svps=2&svt=1900&vac_net=0",
+          },
+        ],
+      },
+      {
+        time: "13:30–14:00",
+        title: "前往宇治",
+        place: "Uji Station",
+        transit: {
+          from: "JR 稻荷站",
+          to: "JR 宇治站",
+          duration: "約 15–25 分",
+          route: "參拜後由神社正門旁的 JR 稻荷站搭奈良線みやこ路快速或普通，直達 JR 宇治站，無須轉乘。",
+        },
+        links: [
+          {
+            label: "開啟地圖",
+            url: "https://maps.app.goo.gl/wGxxv2VTF313JPq17",
+          },
+        ],
+      },
+      {
+        time: "14:00–17:00",
+        title: "宇治觀光・抹茶下午茶",
+        place: "Uji Bridge · Byōdō-in Temple",
+        description: "宇治橋、平等院與抹茶下午茶。",
+        transit: {
+          from: "JR 宇治站",
+          to: "宇治橋／平等院",
+          duration: "步行約 10–15 分",
+          route: "從 JR 宇治站步行經宇治橋前往平等院；中村藤吉本店距車站約 1–2 分，若從平等院回走約 15 分。",
+        },
+        links: [
+          {
+            label: "宇治橋・平等院",
+            url: "https://maps.app.goo.gl/3yxrJzLKuKLbowAn6",
+          },
+          {
+            label: "中村藤吉",
             url: "https://maps.app.goo.gl/CK5gJNxdk4Sdunqd7",
           },
         ],
       },
       {
-        time: "行程結束後",
+        time: "17:00–18:00",
+        title: "回大阪",
+        place: "Osaka Station",
+        description: "搭電車回大阪站。",
+        transit: {
+          from: "JR 宇治站",
+          to: "JR 大阪站",
+          duration: "約 55–70 分",
+          route: "搭 JR 奈良線みやこ路快速（若時間吻合）或普通至京都，轉 JR 京都線新快速至大阪。",
+        },
+        links: [
+          {
+            label: "開啟地圖",
+            url: "https://maps.app.goo.gl/e3ewL9Tqz7dgV21b6",
+          },
+        ],
+      },
+      {
+        time: "18:00–",
+        title: "大阪燒",
+        place: "Okonomiyaki Sakura",
+        description: "在新梅田食道街吃大阪燒。",
+        transit: {
+          from: "JR 大阪站",
+          to: "Okonomiyaki Sakura",
+          duration: "步行約 3–5 分",
+          route: "從 JR 大阪站御堂筋口前往高架下的新梅田食道街。",
+        },
+        note: "18:00 為目標；依 JR 班次可能約 18:15 抵達。備案：Hanadako 章魚燒",
+        links: [
+          {
+            label: "開啟地圖",
+            url: "https://maps.app.goo.gl/bGM7wGdXHQeDamZn8",
+          },
+          {
+            label: "Hanadako 章魚燒",
+            url: "https://maps.app.goo.gl/isNHfEBea2z7Zoy59",
+          },
+        ],
+      },
+      {
+        time: "晚餐後",
         title: "返回大阪住宿",
         place: "大阪・柏凱的家",
         transit: {
-          from: "JR 宇治站",
+          from: "東梅田站（T20）",
           to: "井高野站（I11）",
-          duration: "約 1 小時 30–45 分",
-          route: "JR 奈良線至京都，轉 JR 京都線新快速至大阪；步行至東梅田，搭谷町線至太子橋今市，再轉今里筋線至井高野。",
+          duration: "約 35–45 分",
+          route: "從新梅田食道街步行至東梅田，搭谷町線至太子橋今市，轉今里筋線至井高野。",
         },
         links: osakaHomeLinks,
       },
@@ -1147,12 +1377,16 @@ const tripData = [
         links: [
           {
             label: "開啟地圖",
-            url: "https://maps.app.goo.gl/vqq38pvp7vK3hNxVA",
+            url: "https://maps.app.goo.gl/2nTZMZBDPa4xBP1Q8",
+          },
+          {
+            label: "附近美食",
+            url: "https://tabelog.com/tw/osaka/A2706/A270603/R13850/rstLst/?LstSmoking=0&SrtT=rt&railroad=true&svd=20260731&svps=2&svt=1900&vac_net=0",
           },
         ],
       },
       {
-        time: "14:00–19:00",
+        time: "14:30–19:30",
         title: "最後採買",
         place: "大阪車站或心齋橋",
         description: "買買買。",
@@ -1220,6 +1454,7 @@ const tripData = [
       {
         time: "完成後",
         title: "休息",
+        note: "可能沒時間睡",
       },
     ],
   },
@@ -1251,10 +1486,10 @@ const tripData = [
         },
       },
       {
-        time: "抵達後",
+        time: "05:30–",
         title: "辦理登機",
         place: "關西國際機場",
-        description: "辦理登機手續、最後買伴手禮。",
+        description: "辦理登機手續，也能最後買お土産。",
       },
       {
         time: "07:55–",
@@ -1283,6 +1518,7 @@ const checklistItems = [
   "雨傘、陽傘",
   "領巾",
   "延長線",
+  "辦 Mobile Suica",
 ];
 
 const fixedExpenseItems = [

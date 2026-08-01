@@ -872,6 +872,7 @@ a {
 }
 
 .checklist-card,
+.room-card,
 .deadline-card,
 .stay-card {
   padding: 26px;
@@ -1008,6 +1009,34 @@ a {
 .essential-side {
   display: grid;
   gap: 18px;
+}
+
+.room-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 18px 0 0;
+}
+
+.room-grid > div {
+  min-width: 0;
+  padding: 12px;
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.room-grid dt {
+  color: var(--primary);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.room-grid dd {
+  margin: 5px 0 0;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.65;
 }
 
 .deadline-list {
@@ -1904,6 +1933,10 @@ a {
     grid-template-columns: 1fr 1fr;
   }
 
+  .room-card {
+    grid-column: 1 / -1;
+  }
+
   .reference-grid {
     grid-template-columns: 1fr;
   }
@@ -2139,6 +2172,7 @@ a {
   }
 
   .checklist-card,
+  .room-card,
   .deadline-card,
   .stay-card {
     padding: 20px;
@@ -2149,6 +2183,10 @@ a {
   }
 
   .essential-side {
+    grid-template-columns: 1fr;
+  }
+
+  .room-grid {
     grid-template-columns: 1fr;
   }
 

@@ -2204,6 +2204,25 @@ a {
     padding-left: 6px;
   }
 
+  .budget-table-wrap table {
+    table-layout: fixed;
+  }
+
+  .budget-table-wrap th:first-child {
+    width: 46%;
+    overflow-wrap: anywhere;
+  }
+
+  .budget-table-wrap th:nth-child(2),
+  .budget-table-wrap td:nth-child(2) {
+    width: 29%;
+  }
+
+  .budget-table-wrap th:nth-child(3),
+  .budget-table-wrap td:nth-child(3) {
+    width: 25%;
+  }
+
   .expense-book {
     padding: 20px 16px;
   }

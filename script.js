@@ -1531,6 +1531,7 @@ const fixedExpenseItems = [
   { name: "環球影城", amount: 1959, category: "景點／門票" },
   { name: "租車", amount: 1175, category: "交通" },
   { name: "大阪機場接送", amount: 929, category: "交通" },
+  { name: "關西地區鐵路周遊券", amount: 2258, category: "交通" },
 ];
 
 const expenseCategories = ["餐飲", "交通", "購物", "景點／門票", "住宿", "其他"];
